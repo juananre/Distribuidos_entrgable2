@@ -162,8 +162,9 @@ public class TEST : MonoBehaviour
             {
                 AuthData data = JsonUtility.FromJson<AuthData>(request.downloadHandler.text);
                 Debug.Log("su puntaje es: " + data.usuario.data.score);
-               
 
+                panel.SetActive(true);
+                StartCoroutine(RetrieveAndSetScores());
             }
             else
             {
